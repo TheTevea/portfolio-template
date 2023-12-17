@@ -1,16 +1,16 @@
 
 
-*{
-    padding: 0;
-    margin: 0;
-    /* box-sizing: border-box; */
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
-    color: #fff;
-    background: transparent;
+  *{
+      padding: 0;
+      margin: 0;
+      /* box-sizing: border-box; */
   }
+
+  body {
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      background: transparent;
+    }
   
   body::before {
     content: "";
@@ -29,8 +29,8 @@ body {
     color: #FFFFFF;
   }
 
-  
   /* ---------------- Home Page Section Start ---------------- */
+
   .home-body{
     position: fixed;
     top: 0;
@@ -63,7 +63,7 @@ body {
     }
   }
 
- 
+  
   .home h1{
     font-size: 48px;
     font-weight: 700;
@@ -88,7 +88,75 @@ body {
     border-spacing: 30px;  
   }
 
+  /* rotating word start */
+  .wrapper{
+    box-sizing: content-box;
+    /* background-color: #ffffff; */
+    height: 45px;
+    display: flex;
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+  }
 
+  .words{
+      overflow: hidden;
+  }
+  .wrapper p{
+    position: relative;
+    font-size: 24px;
+    font-weight: normal;
+  }
+  .wrapper p::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 100%;
+    height: 2px;
+    background-color: #f7df1e;
+
+  }
+  .wrapper span{
+      display: block;
+      font-size: 24px;
+      height: 100%;
+      padding-left: 10px;
+      color: #f7df1e;
+      /* border: 1px solid orange; */
+      animation: span_words 10s infinite;
+      /* animation-duration: 6s; */
+  }
+
+  @keyframes span_words {
+      10%{
+          transform: translateY(-112%);
+      }
+      25%{
+          transform: translateY(-100%);
+      }
+      35%{
+          transform: translateY(-212%);
+      }
+      50%{
+          transform: translateY(-200%);
+      }
+      60%{
+          transform: translateY(-312%);
+      }
+      75%{
+          transform: translateY(-300%);
+      }
+      85%{
+          transform: translateY(-412%);
+      }
+      100%{
+          transform: translateY(-400%);
+      }
+      
+  }
+  /* rotating word end */
+
+  /* nav menu start */
   .menu li a{
     text-decoration: none;
     cursor: pointer;
@@ -122,10 +190,10 @@ body {
     height: 2px;
     background-color: #f7df1e;
   }
+  /* nav menu end */
 
- /* social media */
-
- .social-menu a{
+  /* social media start*/
+  .social-menu a{
     font-size: 16px;
     text-decoration: none;
     background: rgba(255, 255, 255, 0.1);
@@ -136,72 +204,26 @@ body {
     justify-content: center;
     align-items: center;
     transition: ease-in-out 0.3s;;
- }
- .social-menu a:hover{
+  }
+  .social-menu a:hover{
     background: #f7df1e;;
- }
+  }
+  /* social media end*/
 
- /* menu button */
-
-.burger-button{
-  cursor: pointer;
-}
-.burger-button:hover{
-  color: #f7df1e;
-}
-
-.close-button{
-    display: none;
+  /* menu toggle button start*/
+  .burger-button{
     cursor: pointer;
-}
+  }
+  .burger-button:hover{
+    color: #f7df1e;
+  }
+
+  .close-button{
+      display: none;
+      cursor: pointer;
+  }
+    /* menu toggle button end*/
  
-
- @media screen and (max-width: 991px) {
-    .menu li a{
-        display: none;
-    }
-
-    .toogle li a{
-        display: block;
-    }
-    .toogle{
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 100%;
-        height: 100vh;
-        padding: 20px;
-        flex-direction: column;
-        background-color: rgba(0, 0, 0, 0.9);
-        animation: fadeMenu .3s forwards;
-    }
-
-    @keyframes fadeMenu {
-      from{top: 10px;}
-      to{top: 0;}
-    }
-
-    .toogle .close-button{
-        display: block;
-    }
-
-    /* .burger-button{
-        display: block;
-    } */
-    
-  }
-
-  @media (max-width: 768px) {
-    .home h1{
-        font-size: 26px;
-        text-align: center;
-    }
-    .home h2{
-        font-size: 15px;
-        text-align: center;
-    }
-  }
-
     /* ---------------- Home Page Section End ---------------- */
 
 
@@ -311,24 +333,7 @@ body {
   }
   
   
-  @media (max-width: 768px) {
-      main.row{
-          grid-template-columns: 1fr;
-      }
-      .row .col:nth-child(2){
-          margin-top: 30px;
-      }
-
-      #navbar h1{
-        font-size: 28px;
-      }
-
-      .about span+p{
-        font-size: 32px;
-        /* margin-bottom: 7px !important; */
-      }
   
-  }
   
     /* resume end section */
 
@@ -401,6 +406,72 @@ body {
     color: #FFFFFF80;
     opacity: 0.6; /* Firefox */
   }
-    /* ---------------- Contact Page Section End ---------------- */
+  /* ---------------- Contact Page Section End ---------------- */
 
+  /* Responsive Section Start */
+  @media screen and (max-width: 991px) {
+   
+    .menu li a{
+        display: none;
+    }
 
+    .toogle li a{
+        display: block;
+    }
+    .toogle{
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        padding: 20px;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.9);
+        animation: fadeMenu .3s forwards;
+        opacity: 1;
+    }
+    @keyframes fadeMenu {
+      from{top: 10px;}
+      to{top: 0;}
+    }
+
+    .toogle .close-button{
+        display: block;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .home h1{
+        font-size: 26px;
+        text-align: center;
+    }
+    
+    main.row{
+      grid-template-columns: 1fr;
+    }
+    .row .col:nth-child(2){
+      margin-top: 30px;
+    }
+
+    #navbar h1{
+    font-size: 28px;
+    }
+
+    .about span+p{
+    font-size: 32px;
+    /* margin-bottom: 7px !important; */
+    }
+
+    .wrapper p, .wrapper span{
+        font-size: 15px !important;
+    }
+    .wrapper span{
+      margin-left: 0px !important;
+    }
+    .wrapper{
+      height: 32px !important;
+  }
+
+  }
+
+  /* Responsive Section end */
