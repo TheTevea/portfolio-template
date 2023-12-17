@@ -1,0 +1,406 @@
+
+
+*{
+    padding: 0;
+    margin: 0;
+    /* box-sizing: border-box; */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    background: transparent;
+  }
+  
+  body::before {
+    content: "";
+    position: fixed;
+    background: #040404 url("../images/bg.jpg") top right no-repeat;
+    background-size: cover;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    z-index: -1;
+    
+  }
+
+  h1,h2,a{
+    color: #FFFFFF;
+  }
+
+  
+  /* ---------------- Home Page Section Start ---------------- */
+  .home-body{
+    position: fixed;
+    top: 0;
+    animation: fadeBody .6s forwards;
+  }@keyframes fadeBody {
+    from{top: -150px}
+    to{top: 0; }
+  }
+  
+  .home img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    animation: floatImage 4s ease-in-out infinite;
+  }
+
+  @keyframes floatImage{
+    0%{
+        transform: translateY(0);
+
+    }
+    50%{
+        transform: translateY(-1.2rem);
+        
+    }
+    100%{
+        transform: translateY(0);
+        
+    }
+  }
+
+ 
+  .home h1{
+    font-size: 48px;
+    font-weight: 700;
+    transition: ease-in-out .5s;
+  }
+  .home h1 span,#navbar h1 span,.content-title{
+    color: #f7df1e;
+  }
+  .home h1:hover{
+    color: #f7df1e;
+    cursor: pointer;
+  }
+  .home h2{
+    font-size: 24px;
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+  }
+
+  .home h2 span{
+    padding-bottom: 5px;
+    border-bottom: 2px solid #f7df1e;
+    border-spacing: 30px;  
+  }
+
+
+  .menu li a{
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+    transition: 0.3s;
+    display: block;
+  }
+  .menu li a:not(.active):before{
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #f7df1e;  
+    visibility: hidden;
+    transition: all .3s ease-in-out 0s;
+  }
+  .menu li a:hover:before{
+    visibility: visible;
+    content: "";
+    position: absolute;
+    width: 25px;
+  }
+  .menu li a.active::before{
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 25px;
+    height: 2px;
+    background-color: #f7df1e;
+  }
+
+ /* social media */
+
+ .social-menu a{
+    font-size: 16px;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.1);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: ease-in-out 0.3s;;
+ }
+ .social-menu a:hover{
+    background: #f7df1e;;
+ }
+
+ /* menu button */
+
+.burger-button{
+  cursor: pointer;
+}
+.burger-button:hover{
+  color: #f7df1e;
+}
+
+.close-button{
+    display: none;
+    cursor: pointer;
+}
+ 
+
+ @media screen and (max-width: 991px) {
+    .menu li a{
+        display: none;
+    }
+
+    .toogle li a{
+        display: block;
+    }
+    .toogle{
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        padding: 20px;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.9);
+        animation: fadeMenu .3s forwards;
+    }
+
+    @keyframes fadeMenu {
+      from{top: 10px;}
+      to{top: 0;}
+    }
+
+    .toogle .close-button{
+        display: block;
+    }
+
+    /* .burger-button{
+        display: block;
+    } */
+    
+  }
+
+  @media (max-width: 768px) {
+    .home h1{
+        font-size: 26px;
+        text-align: center;
+    }
+    .home h2{
+        font-size: 15px;
+        text-align: center;
+    }
+  }
+
+    /* ---------------- Home Page Section End ---------------- */
+
+
+    /* ---------------- Journey Page Section Start ---------------- */
+
+    /* #resume{
+      z-index: -1;
+    } */
+    #navbar{
+      z-index: 1;
+      background: rgba(0, 0, 0, 0.9);
+    }
+    #navbar h1,p{
+      font-size: 38px;
+      font-weight: 700;
+      transition: ease-in-out .5s;
+    }
+
+    
+    #navbar h1:hover{
+      color: #f7df1e;
+      cursor: pointer;
+    }
+
+
+    #page-name::before{
+      position: absolute;
+      content: '';
+      left: 130%;
+      top: 50%;
+      width: 120px;
+      height: 1.5px;
+      background-color: #f7df1e;
+    }
+
+
+    /* resume start section */
+
+    .resume{
+      width: 100%;
+      padding: 35px 10%;
+  }
+  
+  .resume{
+      padding-right: calc(10% - 30px);
+  }
+  
+  main.row{
+       display: grid;
+       grid-template-columns: 1fr 1fr;
+       grid-column-gap: 20px;
+  }
+  
+  .col header.title{
+    font-family: "Raleway", sans-serif;
+      color: #11a372;
+      font-weight: bold;
+      padding: 0 0 20px 30px;
+  }
+  
+  .col .contents{
+      padding: 0 30px;
+      border-left: 2px solid #bababa;
+  }
+  
+  .col .contents .box{
+      position: relative;
+      /* border: 1px solid #eaeaea; */
+      cursor: pointer;
+      transition: all 0.4s;
+      margin-bottom: 20px;
+  }
+  
+  /* .col .contents .box:hover{
+      box-shadow: 0px 3px 12px 0px #ccc;
+      border: 1px solid transparent;
+  } */
+  
+  .col .contents .box::before{
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      right: calc(100% + 22px);
+      top: -2px;
+      background-color: #f7df1e;
+      border: 2px solid white;
+  }
+  
+  .box h4{
+      position: relative;
+      color: #f7df1e;
+  }
+  
+  .box h3{
+      font-size: 19px;
+      padding: 10px 0px 6px;
+      font-family: "Raleway", sans-serif;
+      color: #FFFFFF;
+  }
+  
+  .box p{
+      line-height: 1.2;
+      color: #FFFFFF;
+      font-size: 17px;
+  }
+  
+  
+  @media (max-width: 768px) {
+      main.row{
+          grid-template-columns: 1fr;
+      }
+      .row .col:nth-child(2){
+          margin-top: 30px;
+      }
+
+      #navbar h1{
+        font-size: 28px;
+      }
+
+      .about span+p{
+        font-size: 32px;
+        /* margin-bottom: 7px !important; */
+      }
+  
+  }
+  
+    /* resume end section */
+
+
+    /* ---------------- Journey Page Section End ---------------- */
+
+
+
+    /* ---------------- About Page Section Start ---------------- */
+
+  .about h3{
+    margin-top: 5px;
+    color: #f7df1e;
+    font-weight: bold;
+  }
+  .about i{
+    color: #f7df1e;
+  }
+
+
+
+    /* ---------------- About Page Section End ---------------- */
+
+
+    /* ---------------- Contact Page Section Start ---------------- */
+
+    .info-box{
+      padding: 20px 0;
+      margin-top: 25px;
+      background: rgba(255, 255, 255, 0.08); 
+    }
+
+    .contact i{
+      color: #f7df1e;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.1);
+      margin: 0 15px 0 20px;
+    }
+
+    .message{
+      margin-top: 25px;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .message input {
+      font-size: .9rem;
+      border: 0px solid;
+      margin-bottom: 15px;
+      padding: 10px;
+      width: 100%;
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      background-color: rgba(255, 255, 255, 0.1);
+  }
+  .message-field{
+    padding-bottom: 90px !important;
+  }
+  
+  .form-control:focus {
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: #FFFFFF;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+    
+  .message input::placeholder {
+    color: #FFFFFF80;
+    opacity: 0.6; /* Firefox */
+  }
+    /* ---------------- Contact Page Section End ---------------- */
+
+
