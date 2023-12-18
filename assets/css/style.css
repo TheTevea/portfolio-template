@@ -408,6 +408,38 @@
   }
   /* ---------------- Contact Page Section End ---------------- */
 
+
+  /* ---------------- Portfolio Section Start ---------------- */
+
+  .btn-container .p-btn{
+    color: #FFFFFF;
+    border: none;
+    background-color: transparent;
+    padding: 5px 15px;
+    margin: 0 2px;
+    border-radius: 5px;
+    transition: all .5s;
+    background: rgba(255, 255, 255, 0.1);
+  }
+  .btn-container .p-btn:not(.p-btn.active):hover{
+    color: #040404;
+    font-weight: 500;
+    background-color: #f7df1e;
+  }
+
+  .p-btn.active{
+    background-color: #f7df1e;
+    color: #040404;
+    font-weight: 500;
+  }
+
+      /* --bs-btn-color: var(--bs-body-color);
+
+  /* ---------------- Portfolio Section End ---------------- */
+
+
+
+
   /* Responsive Section Start */
   @media screen and (max-width: 991px) {
    
